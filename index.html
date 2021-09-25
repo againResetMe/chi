@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index1.css">
+    <style>
+        .content {
+            background-color: black;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        video {
+            float: left;
+            width: 600px;
+            box-shadow: 0 0 8px #000;
+            border: 5px solid white;
+            display: block;
+            margin: 10px;
+        }
+        
+        video:nth-child(2),
+        video:nth-child(4) {
+            float: right;
+        }
+        
+        .clear::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        .wrap {
+            position: relative;
+        }
+        
+        .video1 {
+            position: absolute;
+            left: 0;
+        }
+        
+        .video1 video {
+            width: 20vw;
+        }
+        
+        .video2 {
+            position: absolute;
+            right: 0;
+        }
+        
+        .video2 video {
+            width: 20vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clear">
+        <video id="video1" src="./images/dm4.mp4"></video>
+        <video id="video2" src="./images/dm3.mp4"></video>
+
+    </div>
+    <div id="wrap">
+        <!-- <div class="content"> -->
+        <ul class="init">
+            <li>
+                <div class="inner">
+                    <div class="bg"></div>
+                    <div class="direction">
+                        <div class="header">demo1</div>
+                        <div class="closeBtn"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                    <div class="bg"></div>
+                    <div class="direction">
+                        <div class="header">demo2</div>
+                        <div class="closeBtn"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                    <div class="bg"></div>
+                    <div class="direction">
+                        <div class="header">demo3</div>
+                        <div class="closeBtn"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                    <div class="bg"></div>
+
+                    <div class="direction">
+                        <div class="header">demo4</div>
+                        <div class="closeBtn"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                    <div class="bg"></div>
+                    <div class="direction">
+                        <div class="header">demo5</div>
+                        <div class="closeBtn"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                    <div class="bg"></div>
+                    <div class="direction">
+                        <div class="header">demo6</div>
+                        <div class="closeBtn"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- </div> -->
+    </div>
+    <div class="wrap">
+        <div class="video1"><video src="./bz1.mp4" autoplay muted loop></video></div>
+        <div class="video2"><video src="./bz3.mp4" autoplay muted loop></video></div>
+        <div class="game">
+            <span>干巴爹</span>
+            <div class="sky"></div>
+            <div class="land"></div>
+            <div class="bird swing1"></div>
+        </div>
+        <p class="info">
+            你能在两首视频播放完之前不死吗
+        </p>
+
+
+    </div>
+
+
+
+    <script src="./index.js"></script>
+    <script src="./index1.css"></script>
+    <script src="./scripts/Rectangle.js"></script>
+    <script src="./scripts/Sky.js"></script>
+    <script src="./scripts/Land.js"></script>
+    <script src="./scripts/Bird.js"></script>
+    <script src="./scripts/Pipe.js"></script>
+    <script src="./scripts/Game.js"></script>
+
+    <script>
+        const video1 = document.querySelector('#video1')
+        const video2 = document.querySelector('#video2')
+        video1.addEventListener('ended', () => {
+            video2.play()
+        })
+        video2.addEventListener('ended', () => {
+            video1.play()
+        })
+    </script>
+</body>
+
+</html>
